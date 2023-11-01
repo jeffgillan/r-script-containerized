@@ -2,7 +2,7 @@
 
 This repo shows a simple demonstration for how to containerize an R script for reproducibility and sharing. This is very useful for researchers to share code with other researchers or to their future selves. We show how to build and run Docker containers. Users of the R script can run a single `docker run`  command which will launch an Rstudio server instance which can be accessed through a web browser.The Rstudio server instance will have the R script and all of its dependencies installed. This ensures a consistent environment for running the R script and producing the same results.  
 
-
+## R Script
 The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif)
 
 ```
@@ -31,19 +31,28 @@ DTM = grid_terrain(ground_points, res = 0.1, algorithm = knnidw(k = 10, p = 2))
 writeRaster(DTM, filename="DTM_test.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
 ```
 
+## How to Containerize with Docker
+
+Containerization begins with the creation of a dockerfile.
+
+`touch dockerfile`
 
 
 
 
 ```
+#Use the rocker/geospatial image as the base image. This image contains most of the software dependencies we need for our R script.
 FROM rocker/geospatial:latest
 
 WORKDIR /home/rstudio
 
+#Install an additional R package that is not included in the rocker/geospatial image
 RUN R -e "install.packages('RCSF', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
+#Copy the R script into the container. It will be copyed to the working directory specified above.
 COPY pointcloud_to_DTM.R .
 
+#Expose the port the Rstudeo server will run on
 EXPOSE 8787
 
 CMD ["/init"]
