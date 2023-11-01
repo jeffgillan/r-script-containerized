@@ -81,6 +81,7 @@ Within the command we are doing the following:
 ## Access the Rstudio Server
 After the `docker run` command, the container should now be running. The terminal should be 'hung' in someway, meaning you can't type anything. This is because the Rstudio server is running in the container. To access the Rstudio server, open a web browser and go to http://localhost:8787.
 
+If everything worked correctly, You should see Rstudio.
 ![](./images/rstudio_screenshot.png)
 
 `sessionInfo()`
