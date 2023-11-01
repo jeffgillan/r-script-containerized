@@ -84,6 +84,12 @@ After the `docker run` command, the container should now be running. The termina
 If everything worked correctly, You should see Rstudio.
 ![](./images/rstudio_screenshot.png)
 
+The `/home/rstudio` directory should have the rscript 'pointcloud_to_DTM.R'. If you click on the file, it should open the script in the upperleft portion of the GUI. 
+
+Also in the `/home/rstudio/` directory is the `data` directory. This should be the mounted volume from your local machine that you attached to the container during `docker run...`You will use this data in the script. 
+
+
+
 `sessionInfo()`
 
 
