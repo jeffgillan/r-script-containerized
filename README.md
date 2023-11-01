@@ -72,11 +72,12 @@ Within the command we are doing the following:
 * `--rm` - Automatically remove the container when it exits
 * `-ti` - Allocate a pseudo-TTY connected to the container’s stdin. It gives you an interactive terminal session in the container, allowing you to run commands in the container just as you would in a regular terminal window.
 * `-e DISABLE_AUTH=true` - Disable authentication for the Rstudio server
-* `-v $(pwd):/home/rstudio/data` - Mount the current working directory to the /home/rstudio/data directory in the container. This allows us to access the data on our local machine from within the container.
+* `-v $(pwd):/home/rstudio/data` - Mount the current working directory to the /home/rstudio/data directory in the container. This allows us to access the data on our local machine from within the container. The directory is where you should have pointcloud .laz files.
 * `-p 8787:8787` - Expose port 8787 on the container to port 8787 on the host machine. This allows us to access the Rstudio server from our web browser.
 * `jeffgillan/pointcloud_to_dtm:1.0` - The name and version number of the docker image we want to run.
 
-
+## Access the Rstudio Server
+After the `docker run` command, the container should not be running. The terminal should be 'hung' in someway, meaning you can't type anything. This is because the Rstudio server is running in the container. To access the Rstudio server, open a web browser and go to http://localhost:8787.
 
 
 `docker push jeffgillan/pointcloud_to_dtm:1.0`
