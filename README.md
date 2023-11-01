@@ -82,4 +82,8 @@ Within the command we are doing the following:
 After the `docker run` command, the container should now be running. The terminal should be 'hung' in someway, meaning you can't type anything. This is because the Rstudio server is running in the container. To access the Rstudio server, open a web browser and go to http://localhost:8787.
 
 
+`sessionInfo()`
+
+
+
 `docker push jeffgillan/pointcloud_to_dtm:1.0`
