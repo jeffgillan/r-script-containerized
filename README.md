@@ -39,7 +39,7 @@ Containerization begins with the creation of a dockerfile.
 
 
 ```
-#Use the rocker/geospatial image as the base image. This image contains most of the software dependencies we need for our R script.
+#Use the [rocker/geospatial](https://hub.docker.com/r/rocker/geospatial){target=_blank} image as the base image. This image contains most of the software dependencies we need for our R script.
 FROM rocker/geospatial:latest
 
 WORKDIR /home/rstudio
