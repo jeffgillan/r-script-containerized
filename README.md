@@ -66,7 +66,7 @@ Within the directory that contains the dockerfile and 'pointcloud_to_DTM.R' run 
 
 In the command, 'jeffgillan' is the dockerhub username, 'pointcloud_to_dtm' is the name of the image, and '1.0' is the version number.
 
-## Run the Docker Container
+### Run the Docker Container
 
 `docker run --rm -ti -e DISABLE_AUTH=true -v $(pwd):/home/rstudio/data -p 8787:8787 jeffgillan/pointcloud_to_dtm:1.0`
 
@@ -78,7 +78,7 @@ Within the command we are doing the following:
 * `-p 8787:8787` - Expose port 8787 on the container to port 8787 on the host machine. This allows us to access the Rstudio server from our web browser.
 * `jeffgillan/pointcloud_to_dtm:1.0` - The name and version number of the docker image we want to run.
 
-## Access the Rstudio Server
+### Access the Rstudio Server
 After the `docker run` command, the container should now be running. The terminal should be 'hung' in someway, meaning you can't type anything. This is because the Rstudio server is running in the container. To access the Rstudio server, open a web browser and go to http://localhost:8787.
 
 If everything worked correctly, You should see Rstudio.
@@ -86,11 +86,16 @@ If everything worked correctly, You should see Rstudio.
 
 The `/home/rstudio` directory should have the rscript 'pointcloud_to_DTM.R'. If you click on the file, it should open the script in the upperleft portion of the GUI. 
 
-Also in the `/home/rstudio/` directory is the `data` directory. This should be the mounted volume from your local machine that you attached to the container during `docker run...`You will use this data in the script. 
+Also in the `/home/rstudio/` directory is the `data` directory. This should be the mounted volume from your local machine that you attached to the container during `docker run...`You will use this data in the script. Outputs from the script will be put in this directory. 
 
 
+### Environment
+This Docker image should have all the software needed to run the script. All the user has to do is supply the data (in this case a .laz point cloud). 
 
-`sessionInfo()`
+You can see environment details by typying `sessionInfo()`in the Console
+
+```
+
 
 
 
