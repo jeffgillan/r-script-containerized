@@ -95,8 +95,41 @@ This Docker image should have all the software needed to run the script. All the
 You can see environment details by typying `sessionInfo()`in the Console
 
 ```
+R version 4.3.2 (2023-10-31)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.3 LTS
 
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
 
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
+time zone: Etc/UTC
+tzcode source: system (glibc)
 
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] lidR_4.0.4    raster_3.6-26 sp_2.1-1      RCSF_1.0.2   
+
+loaded via a namespace (and not attached):
+ [1] terra_1.7-55       vctrs_0.6.4        cli_3.6.1          rlang_1.1.1        DBI_1.1.3         
+ [6] KernSmooth_2.23-22 generics_0.1.3     sf_1.0-14          data.table_1.14.8  glue_1.6.2        
+[11] e1071_1.7-13       fansi_1.0.5        grid_4.3.2         abind_1.4-5        classInt_0.4-10   
+[16] tibble_3.2.1       lifecycle_1.0.3    compiler_4.3.2     dplyr_1.1.3        codetools_0.2-19  
+[21] pkgconfig_2.0.3    Rcpp_1.0.11        rstudioapi_0.15.0  lattice_0.21-9     R6_2.5.1          
+[26] tidyselect_1.2.0   class_7.3-22       utf8_1.2.4         parallel_4.3.2     pillar_1.9.0      
+[31] magrittr_2.0.3     tools_4.3.2        proxy_0.4-27       rlas_1.6.3         lazyeval_0.2.2    
+[36] stars_0.6-4        units_0.8-4   
+```
+
+### Upload your Docker Image to Dockerhub
+ Once you are happy with your container and have verified it works, you can upload it to Dockerhub. Dockerhub is the official place to park your container so other people (and your future self) can access it. 
+
+ 
 `docker push jeffgillan/pointcloud_to_dtm:1.0`
