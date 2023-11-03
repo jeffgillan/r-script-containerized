@@ -44,7 +44,7 @@ You should also have a new file called `chm.tif` in the mounted `data` folder. T
 
 ![](./images/rstudio_screenshot5.png)
 
-??? Tip "What does the R-script do?"
+!!! Tip "What does the R-script do?"
     
     The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif). The R script is called 'pointcloud_to_DTM.R' and is located in the root 
     directory of this repo.
