@@ -33,7 +33,12 @@ If everything worked correctly, You should see Rstudio.
 Open the script `pointcloud_to_DTM.R`
 
 Highlight all of the code and click *Run*
+![](./images/rstudio_screenshot2.png)
 
+
+![](./images/rstudio_screenshot4.png)
+
+![](./images/rstudio_screenshot5.png)
 
 ## R Script
 The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif). The R script is called 'pointcloud_to_DTM.R' and is located in the root directory of this repo.
