@@ -25,6 +25,9 @@ For linux amd64 architecture
 
 Open a web browser and go to `localhost:8787`
 
+If everything worked correctly, You should see Rstudio.
+![](./images/rstudio_screenshot.png)
+
 Open the script `pointcloud_to_DTM.R`
 
 Run all the code 
