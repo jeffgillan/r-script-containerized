@@ -1,8 +1,5 @@
 # r-script-containerized
 
-
-![](https://github.com/jeffgillan/resource_mapping_with_drones/tree/main/docs/images/lidar_tree.png)
-
 This repo shows a simple demonstration for how to containerize an R script for reproducibility and sharing. This is very useful for researchers to share code with other researchers or to their future selves. Users of the R script can run a single `docker run`  command which will launch an Rstudio server instance which can be accessed through a web browser.The Rstudio server instance will have the R script and all of its dependencies installed. This ensures a consistent environment for running the R script and producing the same results.  
 
 ## Run the Container
