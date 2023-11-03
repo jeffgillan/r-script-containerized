@@ -1,4 +1,8 @@
-FROM rocker/geospatial:latest
+# Base image for arm64 (Apple Silicon) build
+FROM jeffgillan/rstudio_geospatial:1.0
+
+# Base image for Linux amd64
+# FROM rocker/geospatial:4.2.3
 
 WORKDIR /home/rstudio
 
