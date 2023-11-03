@@ -28,10 +28,11 @@ Open a web browser and go to `localhost:8787`
 If everything worked correctly, You should see Rstudio.
 ![](./images/rstudio_screenshot.png)
 
+### 5. Run the Script
+
 Open the script `pointcloud_to_DTM.R`
 
-Run all the code 
-
+Highlight all of the code and click *Run*
 
 
 ## R Script
