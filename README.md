@@ -78,7 +78,7 @@ Containerization begins with the creation of a dockerfile.
 
 `touch dockerfile`
 
-As a starting point we will use the existing Docker image [rocker/geospatial](https://hub.docker.com/r/rocker/geospatial). This image contains most of the software dependencies we need for our R script.
+As a starting point we should use an existing docker image to build on. If you are building from a linux amd64 system, use the existing Docker image [rocker/geospatial:4.2.3](https://hub.docker.com/r/rocker/geospatial). If you are building from a MacOS arm64 system use the existing Docker image [jeffgillan/rstudio_geospatial:1.0](https://hub.docker.com/repository/docker/jeffgillan/rstudio_geospatial/general).
 
 
 ```
