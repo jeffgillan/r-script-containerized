@@ -7,7 +7,7 @@ This repo shows a simple demonstration for how to containerize an R script for r
 
 `git clone https://github.com/jeffgillan/r-script-containerized.git`
 
-### 2. Change directories into the newly clone repository
+### 2. Change directories into the newly cloned repository
 
 `cd r-script-containerized`
 
@@ -21,8 +21,9 @@ For linux amd64 architecture
 
 `docker run --rm -ti -e DISABLE_AUTH=true -v $(pwd):/home/rstudio/data -p 8787:8787 jeffgillan/pointcloud_to_chm:amd64`
 
+### 4. Lauch Rstudio
 
-Open a browser and go to `localhost:8787/`
+Open a web browser and go to `localhost:8787`
 
 Open the script `pointcloud_to_DTM.R`
 
