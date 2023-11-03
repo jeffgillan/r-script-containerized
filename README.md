@@ -46,32 +46,32 @@ You should also have a new file called `chm.tif` in the mounted `data` folder. T
 
 !!! Tip "What does the R-script do?"
     
-    The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif). The R script is called 'pointcloud_to_DTM.R' and is located in the root 
-    directory of this repo.
+        The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif). The R script is called 'pointcloud_to_DTM.R' and is located in the root 
+        directory of this repo.
 
-    ```
-    #Enable packages we will use in this script
-    library(RCSF)
-    library(raster)
-    library(lidR)
-    library(sp)
+        ```
+        #Enable packages we will use in this script
+        library(RCSF)
+        library(raster)
+        library(lidR)
+        library(sp)
 
-    #Set working directory to the mounted volume on your local machine
-    setwd("/home/rstudio/data")
+        #Set working directory to the mounted volume on your local machine
+        setwd("/home/rstudio/data")
 
-    #Bring point cloud into our environment
-    tree_pointcloud = readLAS("tree.laz")
+        #Bring point cloud into our environment
+        tree_pointcloud = readLAS("tree.laz")
 
-    #Create a canopy height model (CHM) from the 3D points. Resolution of 10 cm. 
-    CHM = rasterize_canopy(tree_pointcloud, res = 0.1, algorithm = p2r(), pkg = "raster")
+        #Create a canopy height model (CHM) from the 3D points. Resolution of 10 cm. 
+        CHM = rasterize_canopy(tree_pointcloud, res = 0.1, algorithm = p2r(), pkg = "raster")
 
-    # Plot the 2D raster CHM
-    plot(CHM)
+        # Plot the 2D raster CHM
+        plot(CHM)
 
-    #Write the the raster DTM out to the mounted volume on your local machine
-    writeRaster(CHM, filename="CHM.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
+        #Write the the raster DTM out to the mounted volume on your local machine
+        writeRaster(CHM, filename="CHM.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
 
-    ```
+        ```
 
 ## How to Containerize with Docker
 
