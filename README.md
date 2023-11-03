@@ -93,10 +93,13 @@ FROM rocker/geospatial:4.2.3
 
 WORKDIR /home/rstudio
 
+# Install the package RCSF which is needed for anlyzing LiDAR
 RUN R -e "install.packages('RCSF', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
+# Copy the r-script into the container
 COPY pointcloud_to_DTM.R .
 
+# Set the browser port to 8787
 EXPOSE 8787
 
 CMD ["/init"]
