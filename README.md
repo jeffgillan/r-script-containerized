@@ -80,23 +80,27 @@ Containerization begins with the creation of a dockerfile.
 
 As a starting point we should use an existing docker image to build on. If you are building from a linux amd64 system, use the existing Docker image [rocker/geospatial:4.2.3](https://hub.docker.com/r/rocker/geospatial). If you are building from a MacOS arm64 system use the existing Docker image [jeffgillan/rstudio_geospatial:1.0](https://hub.docker.com/repository/docker/jeffgillan/rstudio_geospatial/general).
 
+</br>
+
+Dockerfile 
 
 ```
-#Use the rocker/geospatial image as the base image. This image contains most of the software dependencies we need for our R script.
-FROM rocker/geospatial:latest
+# Base image for arm64 (Apple Silicon) build
+# FROM jeffgillan/rstudio_geospatial:1.0
+
+# Base image for Linux amd64
+FROM rocker/geospatial:4.2.3
 
 WORKDIR /home/rstudio
 
-#Install an additional R package that is not included in the rocker/geospatial image
 RUN R -e "install.packages('RCSF', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
-#Copy the R script into the container. It will be copyed to the working directory specified above.
 COPY pointcloud_to_DTM.R .
 
-#Expose the port the Rstudeo server will run on
 EXPOSE 8787
 
 CMD ["/init"]
+
 ```
 
 ### Build the Docker Image
