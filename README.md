@@ -35,8 +35,12 @@ Open the script `pointcloud_to_DTM.R`
 Highlight all of the code and click *Run*
 ![](./images/rstudio_screenshot2.png)
 
+Upon completing the code, you should have a 2D plot of the tree
 
 ![](./images/rstudio_screenshot4.png)
+
+You should also have a new file called `chm.tif` in the mounted `data` folder. The `chm.tif` has been written to your local machine!
+
 
 ![](./images/rstudio_screenshot5.png)
 
