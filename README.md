@@ -4,7 +4,10 @@ This repo shows a simple demonstration for how to containerize an R script for r
 
 ## Run the Container
 1. Clone this repository to your local machine
+
 `git clone https://github.com/jeffgillan/r-script-containerized.git`
+
+2. Change directories into the newly clone repository
 
 `cd r-script-containerized`
 
