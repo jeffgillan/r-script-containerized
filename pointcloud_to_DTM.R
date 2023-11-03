@@ -17,4 +17,4 @@ CHM = rasterize_canopy(tree_pointcloud, res = 0.1, algorithm = p2r(), pkg = "ras
 plot(CHM)
 
 #Write the the raster DTM out to the mounted volume on your local machine
-writeRaster(DTM, filename="CHM.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
+writeRaster(CHM, filename="CHM.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
