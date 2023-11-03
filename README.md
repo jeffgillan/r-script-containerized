@@ -44,10 +44,9 @@ You should also have a new file called `chm.tif` in the mounted `data` folder. T
 
 ![](./images/rstudio_screenshot5.png)
 
-What does the R-script do?
+#### What does the R-script do?
     
-The R script takes a drone-based point cloud (.laz) and produces a digital terrain model (DTM.tif). The R script is called 'pointcloud_to_DTM.R' and is located in the root 
-directory of this repo.
+The R script `pointcloud_to_DTM.R` takes a 3D LiDAR point cloud (tree.laz) and produces a 2D Canopy Height Model (CHM.tif). 
 
 ```
 #Enable packages we will use in this script
@@ -68,7 +67,7 @@ CHM = rasterize_canopy(tree_pointcloud, res = 0.1, algorithm = p2r(), pkg = "ras
 # Plot the 2D raster CHM
 plot(CHM)
 
-#Write the the raster DTM out to the mounted volume on your local machine
+#Write the the raster CHM out to the mounted volume on your local machine
 writeRaster(CHM, filename="CHM.tif", format="GTiff", datatype='FLT4S', overwrite=TRUE)
 
 ```
