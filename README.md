@@ -3,15 +3,24 @@
 This repo shows a simple demonstration for how to containerize an R script for reproducibility and sharing. This is very useful for researchers to share code with other researchers or to their future selves. Users of the R script can run a single `docker run`  command which will launch an Rstudio server instance which can be accessed through a web browser.The Rstudio server instance will have the R script and all of its dependencies installed. This ensures a consistent environment for running the R script and producing the same results.  
 
 ## Run the Container
-1. Clone this repository to your local machine
+### 1. Clone this repository to your local machine
 
 `git clone https://github.com/jeffgillan/r-script-containerized.git`
 
-2. Change directories into the newly clone repository
+### 2. Change directories into the newly clone repository
 
 `cd r-script-containerized`
 
-`docker run --rm -ti -e DISABLE_AUTH=true -v $(pwd):/home/rstudio/data -p 8787:8787 jeffgillan/pointcloud_to_chm:1.0`
+### 3. Run the Container
+
+For Apple arm64 architecture
+
+`docker run --rm -ti -e DISABLE_AUTH=true -v $(pwd):/home/rstudio/data -p 8787:8787 jeffgillan/pointcloud_to_chm:arm64`
+
+For linux amd64 architecture
+
+`docker run --rm -ti -e DISABLE_AUTH=true -v $(pwd):/home/rstudio/data -p 8787:8787 jeffgillan/pointcloud_to_chm:amd64`
+
 
 Open a browser and go to `localhost:8787/`
 
